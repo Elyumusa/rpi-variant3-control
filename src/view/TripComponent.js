@@ -10,6 +10,7 @@ function createTripComponentTemplate(trip) {
         <p>Date: ${date}</p>
         <p>Notes: ${notes}</p>
         <button class="delete-button">Delete Trip</button>
+        <button class="edit-button">Edit Trip</button>
         </div>`
     )
 }
@@ -24,7 +25,7 @@ export default class TripComponent{
     constructor({trip, onDeleteClick}) {
         this.trip=trip;
         this.#handleDeleteClick=onDeleteClick
-        this.getelement().addEventListener("click",this.#clickHandler)
+        this.getelement().querySelector('.delete-button').addEventListener("click",this.#clickHandler)
     }
 
     get template(){
